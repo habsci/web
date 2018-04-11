@@ -11,7 +11,7 @@ import { ApolloProvider } from 'react-apollo';
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://habsci-server.herokuapp.com/graphql',
+    uri: "/graphql",
   }),
   cache: new InMemoryCache(),
 });
