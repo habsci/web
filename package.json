@@ -22,7 +22,7 @@
   },
   "proxy": {
     "/graphql": {
-      "target": "http://localhost:8000"
+      "target": "https://habsci-server.herokuapp.com"
     }
   },
   "scripts": {
