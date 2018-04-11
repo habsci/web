@@ -5,7 +5,14 @@ import ExpansionPanel, {
   ExpansionPanelDetails,
   ExpansionPanelSummary,
 } from 'material-ui/ExpansionPanel';
+import { CHARCOAL } from '../constants';
 
+
+const styles = {
+  title: {
+    color: CHARCOAL,
+  },
+};
 
 class ServiceList extends Component
 {
@@ -27,25 +34,32 @@ class ServiceList extends Component
 
     if (services)
     {
-      return services.map((service, i) =>
-      {
-        return(
-          <ExpansionPanel key={i} expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-            <ExpansionPanelSummary>
-              <Typography>General settings</Typography>
-              <Typography>I am an expansion panel</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                {service.name}
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-        );
-      });
+      return (
+        <div>
+          <h1 style={styles.title}>Here are all the services we have:</h1>
+          {
+            services.map((service, i) =>
+            {
+              return(
+                <ExpansionPanel key={i} expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
+                  <ExpansionPanelSummary>
+                    <Typography>{service.name}</Typography>
+                    <Typography>I am an expansion panel</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <Typography>
+                      {service.name}
+                    </Typography>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              );
+            })
+          }
+        </div>
+      )
     }
 
-    return <CircularProgress size={100}/>;
+    return <h1>Whoops! We couldn't find any services to list for you!</h1>;
   }
 }
 
