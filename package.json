@@ -20,11 +20,6 @@
     "react-scripts": "1.1.1",
     "react-svg": "^2.2.16"
   },
-  "proxy": {
-    "/graphql": {
-      "target": "https://habsci-server.herokuapp.com"
-    }
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
