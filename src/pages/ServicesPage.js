@@ -59,10 +59,10 @@ class ServicesPage extends Component
 }
 
 export default graphql(gql`
-query {
-  allServices {
-    name
+  query {
+    allServices {
+      name
+    }
   }
-}
 `
 )(ServicesPage);
