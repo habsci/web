@@ -9,9 +9,16 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 
+let uri;
+
+if (process.env.NODE_ENV === 'production')
+  uri = 'https://habsci-server.herokuapp.com/graphql'
+else
+  uri = 'http://localhost:8000/graphql';
+
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: "https://habsci-server.herokuapp.com/graphql",
+    uri,
   }),
   cache: new InMemoryCache(),
 });
