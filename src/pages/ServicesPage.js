@@ -4,7 +4,9 @@ import gql from 'graphql-tag';
 import { LINEN, CHARCOAL } from '../constants';
 
 import ServiceList from '../components/ServiceList';
+import ServiceModal from '../components/ServiceModal';
 import { CircularProgress } from 'material-ui';
+
 
 const styles = {
   main: {
@@ -52,6 +54,7 @@ class ServicesPage extends Component
       <div style={styles.main}>
         <div style={{ width: '50%' }}>
           <ServiceList services={data.allServices}/>
+          <ServiceModal/>
         </div>
       </div>
     )

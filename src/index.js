@@ -18,7 +18,7 @@ else
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri,
+    uri: 'https://habsci-server.herokuapp.com/graphql',
   }),
   cache: new InMemoryCache(),
 });
